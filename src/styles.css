@@ -148,3 +148,8 @@ p.weather-details {
   text-align: center;
   font-size: 13px;
 }
+
+.info-text {
+  padding-top: 20px;
+  color: #240849;
+}
