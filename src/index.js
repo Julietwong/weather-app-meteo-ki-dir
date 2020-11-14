@@ -8,7 +8,6 @@ function searchCity(event){
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");   
   let cityNameLowerCase = searchInput.value.toLowerCase();
-  console.log(cityNameLowerCase);
   if (cityNameLowerCase === "melbourne"){    
     axios.get(`http://api.openweathermap.org/data/2.5/weather?q=melbourne,au&units=metric&appid=43b685724e0c77779a4487b322bb66db`).then(showSearchedCityWeather);
   }
@@ -77,8 +76,7 @@ function showSearchedCityWeather(response){
   windSpeed.innerHTML=`Wind: ${Math.round((response.data.wind.speed)*3.6)} KMPH`;  
   
   let cityName = response.data.name;  
-  let countryCode = response.data.sys.country;
-  console.log(countryCode);
+  let countryCode = response.data.sys.country;  
   let location = document.querySelector("#location-name");
   location.innerHTML = `${cityName}, ${countryCode}`;
 
@@ -92,9 +90,8 @@ function showSearchedCityWeather(response){
 
   function showCurrentLocationWeather(response){
     console.log(response.data);
-    if ((response.data.main) === undefined){
-      console.log(response.data.list[0]);
-      let currentTemp = document.querySelector("#current-temperature");
+    if ((response.data.main) === undefined){      
+    let currentTemp = document.querySelector("#current-temperature");
     currentTemp.innerHTML=Math.round(response.data.list[0].main.temp);    
     let humidity = document.querySelector("#humidity");
     humidity.innerHTML=`Humidity: ${response.data.list[0].main.humidity}%`;
