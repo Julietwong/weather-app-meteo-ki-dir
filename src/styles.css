@@ -15,6 +15,10 @@ hr.line {
   margin: 0 auto;
   padding-top: 60px;
 }
+.inner-container {
+  max-width: 800px;
+}
+
 .app-name {
   font-family: "Sora", sans-serif;
   font-size: 25px;
@@ -81,6 +85,7 @@ hr.line {
 }
 .current-weather-description {
   text-align: center;
+  text-transform: capitalize;
   position: relative;
   bottom: 30px;
   font-size: 13px;
@@ -152,5 +157,4 @@ p.weather-details {
 .info-text {
   padding-top: 20px;
   color: #240849;
-  text-align: center;
 }
