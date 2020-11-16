@@ -102,6 +102,10 @@ a.temperature-unit {
   margin: 0;
 }
 
+a.temperature-unit:hover {
+  cursor: pointer;
+}
+
 .celcius {
   position: relative;
   right: 10px;
@@ -125,6 +129,7 @@ a.temperature-unit {
 .farenheit.active:hover {
   text-decoration: none;
 }
+
 .farenheit.active {
   font-size: 25px;
   cursor: default;
@@ -145,29 +150,31 @@ p.weather-details {
   margin-bottom: 0;
   font-size: 14px;
 }
-.row.forecast-six-days {
+.row.forecast-3hour {
   margin-top: 10px 10px 0 10px;
 }
 
-.forecast-six-days-result-icon {
-  text-align: center;
+.forecast-3hour-result-icon {
+  display: block;
+  margin: 0 auto;
+  width: 50px;
 }
 
-.forecast-six-days-result-day {
+.forecast-3hour {
   font-size: 15px;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-.forecast-six-days-result-temperature {
+.forecast-3hour-result-temperature {
   margin: 0;
   padding: 0;
   text-align: center;
   font-size: 13px;
 }
 
-.forecast-six-days-result-precipitation {
+.forecast-3hour-result-precipitation {
   margin: 0;
   padding: 0;
   text-align: center;
