@@ -70,16 +70,20 @@ function showSearchedCityWeather(response){
   currentTemp.innerHTML=Math.round(response.data.main.temp);
   
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML=`Humidity: ${response.data.main.humidity}%`;
+  humidity.innerHTML=`💧Humidity: ${response.data.main.humidity}%`;
 
   let windSpeed = document.querySelector("#wind-speed");
-  windSpeed.innerHTML=`Wind: ${Math.round((response.data.wind.speed)*3.6)} KMPH`;  
+  windSpeed.innerHTML=`💨Wind: ${Math.round((response.data.wind.speed)*3.6)} km/h`;  
   
   let cityName = response.data.name;  
   let countryCode = response.data.sys.country;  
   let location = document.querySelector("#location-name");
   location.innerHTML = `${cityName}, ${countryCode}`;
 
+  let weatherIcon = document.querySelector("#current-weather-icon"); 
+  weatherIcon.setAttribute("src",`src/images/icon_${response.data.weather[0].icon}.png`);
+  weatherIcon.setAttribute("alt",`${response.data.weather[0].description}`); 
+  
   let weatherDescription = document.querySelector("#current-weather-description");
   let weatherDescriptionValue=response.data.weather[0].description;   
   weatherDescription.innerHTML = `${weatherDescriptionValue}`;
@@ -94,10 +98,10 @@ function showCurrentLocationWeather(response){
     let currentTemp = document.querySelector("#current-temperature");
     currentTemp.innerHTML=Math.round(response.data.list[0].main.temp);    
     let humidity = document.querySelector("#humidity");
-    humidity.innerHTML=`Humidity: ${response.data.list[0].main.humidity}%`;
+    humidity.innerHTML=`💧Humidity: ${response.data.list[0].main.humidity}%`;
 
     let windSpeed = document.querySelector("#wind-speed");
-    windSpeed.innerHTML=`Wind: ${Math.round((response.data.list[0].wind.speed)*3.6)} KMPH`;  
+    windSpeed.innerHTML=`💨Wind: ${Math.round((response.data.list[0].wind.speed)*3.6)} km/h`;  
     
     let cityName = response.data.list[0].name;
     let countryCode = response.data.list[0].sys.country;
