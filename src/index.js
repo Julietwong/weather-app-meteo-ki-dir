@@ -64,7 +64,7 @@ function formatDate(timezone){
  }
 
  if (hours >= 5 && hours <= 7){
-    document.getElementById("mainCard").style.backgroundImage="linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%)";
+    document.getElementById("mainCard").style.backgroundImage="linear-gradient(to top, #d9afd9 0%, #97d9e1 100%)";
  }
 
   if (hours >= 7 && hours < 15){
