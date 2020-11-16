@@ -85,6 +85,7 @@ function showSearchedCityWeather(response){
   console.log(response.data);
   let currentTemp = document.querySelector("#current-temperature");
   currentTemp.innerHTML=Math.round(response.data.main.temp);
+  celciusTemperature = currentTemp.innerHTML;
   
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML=`💧Humidity: ${response.data.main.humidity}%`;
@@ -113,7 +114,9 @@ function showCurrentLocationWeather(response){
     console.log(response.data);
     if ((response.data.main) === undefined){      
     let currentTemp = document.querySelector("#current-temperature");
-    currentTemp.innerHTML=Math.round(response.data.list[0].main.temp);    
+    currentTemp.innerHTML=Math.round(response.data.list[0].main.temp);  
+    celciusTemperature = currentTemp.innerHTML;
+    
     let humidity = document.querySelector("#humidity");
     humidity.innerHTML=`💧Humidity: ${response.data.list[0].main.humidity}%`;
 
@@ -152,5 +155,31 @@ currentLocationButton.addEventListener("click", currentLocationSearch);
 let form = document.querySelector("form");
 form.addEventListener("submit", searchCity);
 
+//Convert temperature units
+let celciusTemperature = null;
+
+function convertToFarenheit(event){
+event.preventDefault();
+let temperatureValue = document.querySelector("#current-temperature");
+let farenheitTemperature = Math.round ((celciusTemperature) * 9/5) + 32;
+temperatureValue.innerHTML = farenheitTemperature;
+celciusButton.classList.remove("active");
+farenheitButton.classList.add("active");
+}
+
+function convertToCelcius(event){
+  event.preventDefault();
+  let temperatureValue = document.querySelector("#current-temperature");
+  temperatureValue.innerHTML = celciusTemperature;
+  celciusButton.classList.add("active");
+farenheitButton.classList.remove("active");
+}
+
+let farenheitButton = document.querySelector("#unit-farenheit");
+farenheitButton.addEventListener("click",convertToFarenheit);
+
+let celciusButton = document.querySelector("#unit-celcius");
+celciusButton.addEventListener("click",convertToCelcius);
+
 //Initial load
- axios.get(`http://api.openweathermap.org/data/2.5/weather?q=melbourne,au&units=metric&appid=43b685724e0c77779a4487b322bb66db`).then(showSearchedCityWeather)
+ axios.get(`http://api.openweathermap.org/data/2.5/weather?q=melbourne,au&units=metric&appid=43b685724e0c77779a4487b322bb66db`).then(showSearchedCityWeather);
