@@ -86,9 +86,9 @@ function showSearchedCityWeather(response){
 
   let currentDate = document.querySelector("#current-date-time");
   currentDate.innerHTML = formatDate(response.data.timezone);
-  }
+}
 
-  function showCurrentLocationWeather(response){
+function showCurrentLocationWeather(response){
     console.log(response.data);
     if ((response.data.main) === undefined){      
     let currentTemp = document.querySelector("#current-temperature");
@@ -111,22 +111,25 @@ function showSearchedCityWeather(response){
       else{
       console.log(response.data.main);
       }
-  }
+}
 
- //Current location 
-  function showPosition(position){
+//Current location 
+function showPosition(position){
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
     console.log(latitude,longitude);
     axios.get(`https://${apiCurrentLocationUrl}lat=${latitude}&lon=${longitude}&units=${units}&appid=${apiKey}`).then(showCurrentLocationWeather);
-  }
-  function currentLocationSearch(){
+}
+function currentLocationSearch(){
     navigator.geolocation.getCurrentPosition(showPosition);
-  }  
+}  
 
-  let currentLocationButton = document.querySelector("#location-button");
-  currentLocationButton.addEventListener("click", currentLocationSearch);
+let currentLocationButton = document.querySelector("#location-button");
+currentLocationButton.addEventListener("click", currentLocationSearch);
 
-  //Search form
-  let form = document.querySelector("form");
+//Search form
+let form = document.querySelector("form");
 form.addEventListener("submit", searchCity);
+
+//Initial load
+ axios.get(`http://api.openweathermap.org/data/2.5/weather?q=melbourne,au&units=metric&appid=43b685724e0c77779a4487b322bb66db`).then(showSearchedCityWeather)
