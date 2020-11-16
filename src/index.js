@@ -1,7 +1,7 @@
 //Global variables
 let apiKey = "43b685724e0c77779a4487b322bb66db";
 let apiWeatherUrl = "api.openweathermap.org/data/2.5/weather";
-let apiForecastUrl = "http://api.openweathermap.org/data/2.5/forecast";
+let apiForecastUrl = "https://api.openweathermap.org/data/2.5/forecast";
 let units = "metric";
 
 //Update location
@@ -10,7 +10,7 @@ function searchCity(event){
   let searchInput = document.querySelector("#search-input");   
   let cityNameLowerCase = searchInput.value.toLowerCase();
   if (cityNameLowerCase === "melbourne"){    
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=melbourne,au&units=metric&appid=43b685724e0c77779a4487b322bb66db`).then(showSearchedCityWeather);
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=melbourne,au&units=metric&appid=43b685724e0c77779a4487b322bb66db`).then(showSearchedCityWeather);
   }
   
   else if (cityNameLowerCase){
@@ -229,4 +229,4 @@ let celciusButton = document.querySelector("#unit-celcius");
 celciusButton.addEventListener("click",convertToCelcius);
 
 //Initial load
- axios.get(`http://api.openweathermap.org/data/2.5/weather?q=melbourne,au&units=metric&appid=${apiKey}`).then(showSearchedCityWeather);
+ axios.get(`https://api.openweathermap.org/data/2.5/weather?q=melbourne,au&units=metric&appid=${apiKey}`).then(showSearchedCityWeather);
