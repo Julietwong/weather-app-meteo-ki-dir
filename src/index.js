@@ -59,21 +59,19 @@ function formatDate(timezone){
     "November",
     "December"
  ];
+ //background colour change
  if (hours >= 0 && hours < 5){
     document.getElementById("mainCard").style.backgroundImage="linear-gradient(to top, #09203f 0%, #537895 100%)";
  }
-
  if (hours >= 5 && hours <= 7){
     document.getElementById("mainCard").style.backgroundImage="linear-gradient(to top, #d9afd9 0%, #97d9e1 100%)";
  }
-
   if (hours >= 7 && hours < 15){
    document.getElementById("mainCard").style.backgroundImage="linear-gradient(to top, #30cfd0 0%, #330867 100%)";
  }
  if (hours >= 15 && hours < 18 ){
    document.getElementById("mainCard").style.backgroundImage="linear-gradient(120deg, #f6d365 0%, #fda085 100%)";
  }
-
  if (hours >= 18 && hours <= 24){
     document.getElementById("mainCard").style.backgroundImage="linear-gradient(to top, #09203f 0%, #537895 100%)";
  }
