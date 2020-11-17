@@ -155,38 +155,12 @@ function displayForecast(response){
   } 
 }
 
-function showCurrentLocationWeather(response){    
-    if ((response.data.main) === undefined){      
-    let currentTemp = document.querySelector("#current-temperature");
-    currentTemp.innerHTML=Math.round(response.data.list[0].main.temp);  
-    celciusTemperature = currentTemp.innerHTML;
-    
-    let humidity = document.querySelector("#humidity");
-    humidity.innerHTML=`💧Humidity: ${response.data.list[0].main.humidity}%`;
-
-    let windSpeed = document.querySelector("#wind-speed");
-    windSpeed.innerHTML=`💨Wind: ${Math.round((response.data.list[0].wind.speed)*3.6)} km/h`;  
-    
-    let cityName = response.data.list[0].name;
-    let countryCode = response.data.list[0].sys.country;
-    let location = document.querySelector("#location-name");
-    location.innerHTML = `${cityName}, ${countryCode}`;
-
-    let weatherDescription = document.querySelector("#current-weather-description");
-    let weatherDescriptionValue=response.data.list[0].weather[0].description;   
-    weatherDescription.innerHTML = `${weatherDescriptionValue}`;
-      }
-      else{
-      console.log(response.data.main);
-      }
-}
-
 //Current location 
 function showPosition(position){
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
     console.log(latitude,longitude);
-    axios.get(`https://${apiCurrentLocationUrl}lat=${latitude}&lon=${longitude}&units=${units}&appid=${apiKey}`).then(showCurrentLocationWeather);
+    axios.get(`https://${apiWeatherUrl}?lat=${latitude}&lon=${longitude}&units=${units}&appid=${apiKey}`).then(showSearchedCityWeather);
 }
 function currentLocationSearch(){
     navigator.geolocation.getCurrentPosition(showPosition);
