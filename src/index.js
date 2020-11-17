@@ -219,6 +219,7 @@ function convertToCelcius(event){
   let temperatureValue = document.querySelector("#current-temperature");
   temperatureValue.innerHTML = celciusTemperature;  
   farenheitButton.classList.remove("active");
+  celciusButton.classList.add("active");
 }
 
 let farenheitButton = document.querySelector("#unit-farenheit");
