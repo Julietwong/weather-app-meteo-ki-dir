@@ -15,10 +15,7 @@ function searchCity(event){
   
   else if (cityNameLowerCase){
     axios.get(`https://${apiWeatherUrl}?q=${cityNameLowerCase}&units=${units}&appid=${apiKey}`).then(showSearchedCityWeather);
-  }
-  else{
-    cityName.innerHTML=null;
-  }
+  }  
 }
 
 //Format date - calculate the date
