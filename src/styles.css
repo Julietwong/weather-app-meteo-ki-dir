@@ -17,6 +17,7 @@ hr.line {
 }
 .inner-container {
   max-width: 800px;
+  margin: 0 auto;
 }
 
 .app-name {
@@ -184,4 +185,306 @@ p.weather-details {
 .info-text {
   padding-top: 20px;
   color: #240849;
+}
+
+@media only screen and (max-width: 992px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .form-inline {
+    display: contents;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 720px;
+  }
+  .container {
+    width: 100%;
+    margin: auto 0;
+  }
+  .inner-container {
+    width: 100%;
+    margin: auto 0;
+  }
+  .card-body.header {
+    padding: 5px 15px 10px 5px;
+  }
+
+  .app-name {
+    font-size: 21px;
+    font-weight: 400;
+  }
+  .form-inline {
+    display: flex;
+  }
+  .card-body {
+    padding: 20px 5px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container,
+  .container-md,
+  .container-sm {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    margin: auto 0;
+    padding: 60px 20px 0px 20px;
+  }
+  .inner-container {
+    width: 100%;
+    margin: auto 0;
+  }
+
+  .card-body.header {
+    padding: 0px 15px 10px 0px;
+  }
+
+  .app-name {
+    font-size: 21px;
+    font-weight: 400;
+  }
+  .form-inline {
+    display: flex;
+  }
+  .card-body {
+    padding: 20px 5px;
+  }
+  .card.forecast-results {
+    padding: 15px 5px;
+  }
+  .location {
+    font-size: 25px;
+    text-align: center;
+  }
+  .date {
+    text-align: center;
+    font-size: 18px;
+  }
+  .current-weather-icon {
+    width: 60px;
+  }
+  .current-weather-description {
+    font-size: 12px;
+  }
+  span.current-temperature {
+    font-size: 45px;
+  }
+  a.temperature-unit {
+    font-size: 13px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+  }
+
+  .celcius {
+    position: relative;
+    right: 10px;
+    bottom: 20px;
+  }
+  .farenheit {
+    position: relative;
+    right: 40px;
+    top: 10px;
+  }
+
+  .celcius.active {
+    position: relative;
+    right: 10px;
+    bottom: 15px;
+    font-size: 25px;
+  }
+
+  .farenheit.active {
+    font-size: 25px;
+    cursor: default;
+    font-weight: bold;
+    position: relative;
+    right: 30px;
+    bottom: 30px;
+  }
+  .row.today-forecast {
+    margin-bottom: 100px;
+  }
+  .row.forecast-3hour {
+    margin-top: 10px 0px 0px 0px;
+  }
+
+  .col-2.forecast-3hour {
+    padding: 2px 4px;
+  }
+
+  .forecast-3hour-result-icon {
+    display: block;
+    margin: 0 auto;
+    width: 30px;
+  }
+
+  .forecast-3hour {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .forecast-3hour-result-temperature {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .forecast-3hour-result-precipitation {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .info-text {
+    text-align: center;
+    padding-top: 40px;
+    color: #240849;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container,
+  .container-md,
+  .container-sm {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    margin: auto 0;
+    padding: 40px 20px 0px 20px;
+  }
+  .inner-container {
+    width: 100%;
+    margin: auto 0;
+  }
+
+  .card-body.header {
+    padding: 0px 15px 10px 0px;
+  }
+
+  .app-name {
+    font-size: 21px;
+    font-weight: 400;
+  }
+  .form-inline {
+    display: flex;
+  }
+  .card-body {
+    padding: 20px 5px;
+  }
+  .card.forecast-results {
+    padding: 15px 5px;
+  }
+  .location {
+    font-size: 25px;
+    text-align: center;
+  }
+  .date {
+    text-align: center;
+    font-size: 18px;
+  }
+  .current-weather-icon {
+    width: 60px;
+  }
+  .current-weather-description {
+    font-size: 12px;
+  }
+  span.current-temperature {
+    font-size: 45px;
+  }
+  a.temperature-unit {
+    font-size: 13px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+  }
+
+  .celcius {
+    position: relative;
+    right: 10px;
+    bottom: 20px;
+  }
+  .farenheit {
+    position: relative;
+    left: 55px;
+    top: -25px;
+  }
+
+  .celcius.active {
+    position: relative;
+    right: 10px;
+    bottom: 15px;
+    font-size: 25px;
+  }
+
+  .farenheit.active {
+    font-size: 25px;
+    cursor: default;
+    font-weight: bold;
+    position: relative;
+    right: 30px;
+    top: -35px;
+  }
+  .row.today-forecast {
+    margin-bottom: 50px;
+  }
+
+  .row.forecast-3hour {
+    margin-top: 10px 0px 0px 0px;
+  }
+
+  .col-2.forecast-3hour {
+    padding: 2px 4px;
+  }
+
+  .forecast-3hour-result-icon {
+    display: block;
+    margin: 0 auto;
+    width: 30px;
+  }
+
+  .forecast-3hour {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .forecast-3hour-result-temperature {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .forecast-3hour-result-precipitation {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .info-text {
+    text-align: center;
+    padding-top: 20px;
+    color: #240849;
+  }
 }

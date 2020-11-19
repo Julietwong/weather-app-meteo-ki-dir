@@ -135,7 +135,7 @@ function displayForecast(response){
   forecast = response.data.list[index];
     let timezone = response.data.city.timezone;
     forecastElement.innerHTML +=`
-      <div class="col-2">    
+      <div class="col-2 forecast-3hour">    
           <img 
             class="forecast-3hour-result-icon"
             id = "#"
