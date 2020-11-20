@@ -49,10 +49,7 @@ hr.line {
 .card-body.header {
   padding: 10px 15px 10px 15px;
 }
-.update-time {
-  padding-bottom: 0;
-  margin-bottom: 5px;
-}
+
 .location {
   font-family: "Sora", sans-serif;
   font-size: 30px;
